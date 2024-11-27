@@ -1,0 +1,55 @@
+buff_length = 512;
+[ess, fs] = audioread('la_pitch_bank.wav');
+conv = PitchShiftPlugin();
+%out=conv.process(ess);
+sat=Saturation();
+%%
+num_buffs = floor(length(ess) / buff_length);
+ess_out = zeros(size(ess));
+
+for b = 1:num_buffs
+    start_ind = ((b - 1) * buff_length) + 1;
+    end_ind = start_ind + (buff_length - 1);
+    buff = ess(start_ind:end_ind);
+    ess_out(start_ind:end_ind,:) = process(conv, buff,1.4);
+end
+
+figure(3);
+plot(out);
+title('Pitch-Shifted audio response in Time-Domain');
+xlabel('samples');
+ylabel('amplitude');
+
+
+
+win_length = buff_length;
+overlap_length = floor(win_length / 2);
+nfft = max(256, 2^nextpow2(win_length));
+figure(4);
+spectrogram(out, hamming(win_length), overlap_length, nfft, fs, 'yaxis');
+title('Pitch-Shifted audio signal response in Frequency-Domain');
+
+%soundsc(out, fs);
+
+for b = 1:num_buffs
+    start_ind = ((b - 1) * buff_length) + 1;
+    end_ind = start_ind + (buff_length - 1);
+    buff = ess(start_ind:end_ind);
+    ess_out(start_ind:end_ind,:) = sat.process(out);
+end
+
+figure(3);
+plot(out);
+title('Saturated audio signal response in Time-Domain');
+xlabel('samples');
+ylabel('amplitude');
+
+
+win_length = buff_length;
+overlap_length = floor(win_length / 2);
+nfft = max(256, 2^nextpow2(win_length));
+figure(4);
+spectrogram(out, hamming(win_length), overlap_length, nfft, fs, 'yaxis');
+title('Saturated audio signal response in Frequency-Domain');
+
+soundsc(out, fs);

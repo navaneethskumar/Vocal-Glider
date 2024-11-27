@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="iVdsQI" name="PitchShift" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="KIF5Pf" name="PitchShift">
+    <GROUP id="{1F04E8EB-229E-E500-47D6-EBC2493496D1}" name="Source">
+      <FILE id="vLR9Tt" name="background.png" compile="0" resource="1" file="Source/Assets/background.png"/>
+      <GROUP id="{D57E6FDB-920C-6A3D-D14B-088AAD2B62B2}" name="Assets">
+        <FILE id="k9cj53" name="background.png" compile="0" resource="1" file="Source/background.png"/>
+      </GROUP>
+      <FILE id="A5jj7U" name="CustomSlider.h" compile="0" resource="0" file="Source/CustomSlider.h"/>
+      <FILE id="ncMj5c" name="AmplitudeModulation.cpp" compile="1" resource="0"
+            file="Source/AmplitudeModulation.cpp"/>
+      <FILE id="AlLGq3" name="AmplitudeModulation.h" compile="0" resource="0"
+            file="Source/AmplitudeModulation.h"/>
+      <FILE id="wCic9W" name="Distortion.cpp" compile="1" resource="0" file="Source/Distortion.cpp"/>
+      <FILE id="t9UIGd" name="Distortion.h" compile="0" resource="0" file="Source/Distortion.h"/>
+      <FILE id="d1tFqt" name="gainControl.cpp" compile="1" resource="0" file="Source/gainControl.cpp"/>
+      <FILE id="fzIEI7" name="gainControl.h" compile="0" resource="0" file="Source/gainControl.h"/>
+      <FILE id="Hpz0lV" name="istft.cpp" compile="1" resource="0" file="Source/istft.cpp"/>
+      <FILE id="O9XabG" name="istft.h" compile="0" resource="0" file="Source/istft.h"/>
+      <FILE id="uyvNZ5" name="shifter.cpp" compile="1" resource="0" file="Source/shifter.cpp"/>
+      <FILE id="Ns7kxA" name="shifter.h" compile="0" resource="0" file="Source/shifter.h"/>
+      <FILE id="bXfTYJ" name="stft.cpp" compile="1" resource="0" file="Source/stft.cpp"/>
+      <FILE id="JBbLlL" name="stft.h" compile="0" resource="0" file="Source/stft.h"/>
+      <FILE id="cOiLn7" name="VocoderTools.cpp" compile="1" resource="0"
+            file="Source/VocoderTools.cpp"/>
+      <FILE id="hL6nHl" name="VocoderTools.h" compile="0" resource="0" file="Source/VocoderTools.h"/>
+      <FILE id="ztxXkQ" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="j7WxWV" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="TLp1E1" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="wM3BY4" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PitchShift"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PitchShift"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PitchShift"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PitchShift"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
